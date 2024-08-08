@@ -15,8 +15,8 @@ public class HomePage {
     By homeMovieHeadingTrendings=By.xpath("//h1[text() ='Trending Now']");
     By homeMovieHeadingOriginals=By.xpath("//h1[text() ='Originals']");
     By playButton=By.className("home-movie-play-button");
-    By listOfTrendingNowMoviesDisplayed=By.cssSelector("div.home-bottom-container >:first-child  div.slick-list");
-    By listOfOriginalsMoviesDisplayed=By.cssSelector("div.home-bottom-container >:nth-child(2)  div.slick-list");
+    By listOfTrendingNowMoviesDisplayed=By.xpath("//div[@class='home-bottom-container']/div[1]/div/div/div/div//a");
+    By listOfOriginalsMoviesDisplayed=By.xpath("//div[@class='home-bottom-container']/div[2]/div/div/div/div//a");
     By contactUsSeciton=By.className("contact-us-paragraph");
 
 
