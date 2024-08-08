@@ -28,7 +28,7 @@ public class LoginPageSteps {
         loginPage = new LoginPage(driver);
     }
 
-    @Then("website logo is displayed  and check the heading text ,username and password")
+    @Then("website logo and login button is displayed  and check the heading text ,username and password")
     public void loginPageUi(){
         Assert.assertTrue(loginPage.getWebsiteLogo().isDisplayed(),"App logo is not displayed");
 
