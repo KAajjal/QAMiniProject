@@ -70,7 +70,7 @@ public class HomePageSteps {
 
         int actualCount = homePage.getTrendingNowMoviesList();
 
-        Assert.assertEquals(actualCount,"10","Counting is not matched");
+        Assert.assertEquals(actualCount,10,"Counting is not matched");
     }
 
 
@@ -83,7 +83,7 @@ public class HomePageSteps {
 
         int actualCount = homePage.getOriginalsMoviesList();
 
-        Assert.assertEquals(actualCount,"10","Counting is not matched");
+        Assert.assertEquals(actualCount,10,"Counting is not matched");
 
     }
 
