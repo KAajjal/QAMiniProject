@@ -67,7 +67,7 @@ public class SearchPageSteps {
 
         wait.until(ExpectedConditions.visibilityOfElementLocated(By.className("movie-icon-item")));
         int actualCount = searchPage.getMoviesCount();
-        Assert.assertEquals(actualCount,"43","Counting is not matched");
+        Assert.assertEquals(actualCount,43,"Counting is not matched");
 
 
     }
