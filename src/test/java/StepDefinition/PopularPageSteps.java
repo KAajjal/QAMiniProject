@@ -54,7 +54,7 @@ public class PopularPageSteps {
 
         int actualMovieCount = popularPage.getAlLMoviesList();
 
-        Assert.assertEquals(actualMovieCount,"30","Counting is not matched");
+        Assert.assertEquals(actualMovieCount,30,"Counting is not matched");
     }
 
     @Then("click on Spider man movie and redirect to the movie page")
