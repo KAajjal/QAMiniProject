@@ -75,21 +75,19 @@ public class SearchPageSteps {
     @When("user searches for movies and other failure search functionality")
     public void getfailureFunctionality(){
 
-        Assert.assertTrue(searchPage.getSearcgErrorImage().isDisplayed(),"Error image is not displayed");
-
-        searchPage.searchApplication("xyz");
-
-        WebDriverWait wait=new WebDriverWait(driver,Duration.ofSeconds(5));
-
-        wait.until(ExpectedConditions.visibilityOfElementLocated(By.className("movie-icon-item")));
-
-        int actualCount = searchPage.getMoviesCount();
-
-        System.out.println(actualCount);
-
-        String actualError=searchPage.getErrorMesage();
-        Assert.assertEquals(actualError,"Your search for xyz  did not find any matches.","error message is not displayed");
-
+    searchPage.clickOnSearchEmptyIcon();
+   
+    String actualSearchUrl="https://qamoviesapp.ccbp.tech/search";
+    WebDriverWait wait=new WebDriverWait(driver,Duration.ofSeconds(5));
+    wait.until(ExpectedConditions.urlToBe(actualSearchUrl));
+    String currentSearchUrl=driver.getCurrentUrl();
+    Assert.assertEquals(actualSearchUrl,currentSearchUrl,"URLs do not match");
+    searchPage.searchApplication("xyz");
+    Assert.assertTrue(searchPage.getSearcgErrorImage().isDisplayed(),"Error image is not displayed");
+    int actualCount = searchPage.getMoviesCount();
+    System.out.println(actualCount);
+    String actualError=searchPage.getErrorMesage();
+    Assert.assertEquals(actualError,"Your search for xyz did not find any matches.","error message is not displayed");
     }
 
     @After
